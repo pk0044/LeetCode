@@ -8,11 +8,14 @@ public class Application {
 //		
 //		MinPathSum obj = new MinPathSum();
 //		System.out.println(obj.minPathSum(a));
-		JumpGame obj = new JumpGame();
-		int[] nums = {0};
+//		JumpGame obj = new JumpGame();
+//		int[] nums = {0};
+//		
+//		
+//		System.out.println(	obj.canJump(nums));
 		
-		
-		System.out.println(	obj.canJump(nums));
+		RangeBitwise obj = new RangeBitwise();
+		System.out.println(obj.rangeBitwiseAnd(17, 19));
 	}
 
 }
