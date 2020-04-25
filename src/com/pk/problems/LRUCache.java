@@ -42,9 +42,16 @@ class LRUCache {
         }else {
         	res = map.get(key).val;
         	Node tmp = map.get(key);
-        	if(size > 1 && tmp == last) {
+        	if(size > 1 && tmp.key == last.key) {
         		last = last.prev;
         		last.next = null;
+        		tmp.next = head;
+        		head.prev = tmp;
+        		head = tmp;
+        	}else if(size > 1 && tmp != head) {
+        		Node prev = tmp.prev;
+        		prev.next = tmp.next;
+        		tmp.next.prev = prev;
         		tmp.next = head;
         		head.prev = tmp;
         		head = tmp;
@@ -85,6 +92,7 @@ class LRUCache {
         			tmp.next.prev = prev;
         			tmp.prev = null;
         			tmp.next = head;
+        			head.prev = tmp;
         			head = tmp;
         		}
     		}
