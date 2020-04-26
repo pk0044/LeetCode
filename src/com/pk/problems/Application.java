@@ -14,8 +14,11 @@ public class Application {
 //		
 //		System.out.println(	obj.canJump(nums));
 		
-		RangeBitwise obj = new RangeBitwise();
-		System.out.println(obj.rangeBitwiseAnd(17, 19));
+//		RangeBitwise obj = new RangeBitwise();
+//		System.out.println(obj.rangeBitwiseAnd(17, 19));
+		
+		LCS obj = new LCS();
+		System.out.println(obj.longestCommonSubsequence("abcde", "ace"));
 	}
 
 }
