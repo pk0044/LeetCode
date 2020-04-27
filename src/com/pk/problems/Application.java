@@ -17,8 +17,12 @@ public class Application {
 //		RangeBitwise obj = new RangeBitwise();
 //		System.out.println(obj.rangeBitwiseAnd(17, 19));
 		
-		LCS obj = new LCS();
-		System.out.println(obj.longestCommonSubsequence("abcde", "ace"));
+//		LCS obj = new LCS();
+//		System.out.println(obj.longestCommonSubsequence("abcde", "ace"));
+		
+		LargestSquare obj = new LargestSquare();
+		char[][] a = {{'1','0','1','0','0'},{'1','0','1','1','1'},{'1','1','1','1','1'},{'1','0','0','1','0'}};
+		System.out.println(obj.maximalSquare(a));
 	}
 
 }
