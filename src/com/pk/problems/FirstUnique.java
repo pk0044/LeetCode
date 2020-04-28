@@ -39,22 +39,27 @@ class FirstUnique {
         if(map.containsKey(value) && map.get(value).status == true) {
         	Node node = map.get(value);
         	if(node == head) {
-        		if(head.next == null) {
-        			head = null;
+        		head = head.next;
+        		if(head == null) {
         			last = null;
         		}else {
-        			head = head.next;
         			head.prev = null;
         		}
         	}else if(node == last) {
         		last = last.prev;
-        		last.next = null;
+        		if(last == null) {
+        			head = null;
+        		}else {
+        			last.next = null;
+        		}
         	}else {
-        		node.prev.next = node.next;
-        		node.next.prev = node.prev;
+        		Node prev = node.prev;
+        		Node next = node.next;
+        		prev.next = next;
+        		next.prev = prev;
         	}
         	node.status = false;
-        }else {
+        }else if(!map.containsKey(value)){
         	Node tmp = new Node(value);
         	map.put(value, tmp);
         	
