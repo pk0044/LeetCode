@@ -20,9 +20,11 @@ public class Application {
 //		LCS obj = new LCS();
 //		System.out.println(obj.longestCommonSubsequence("abcde", "ace"));
 		
-		LargestSquare obj = new LargestSquare();
-		char[][] a = {{'1','0','1','0','0'},{'1','0','1','1','1'},{'1','1','1','1','1'},{'1','0','0','1','0'}};
-		System.out.println(obj.maximalSquare(a));
+//		LargestSquare obj = new LargestSquare();
+//		char[][] a = {{'1','0','1','0','0'},{'1','0','1','1','1'},{'1','1','1','1','1'},{'1','0','0','1','0'}};
+//		System.out.println(obj.maximalSquare(a));
+		
+		
 	}
 
 }
