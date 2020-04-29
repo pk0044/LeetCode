@@ -18,6 +18,9 @@ package com.pk.problems;
  */
 public class MaxPathSum {
 	
+	int flag = 0;
+	int max = Integer.MIN_VALUE;
+	
 	public class TreeNode {
 		int val;
 		TreeNode left;
@@ -35,7 +38,6 @@ public class MaxPathSum {
 		return A > B ? A : B;
 	}
 	
-	
 	private int getMaxPath(TreeNode root) {
 		
 		if(root == null) {
@@ -49,7 +51,15 @@ public class MaxPathSum {
 			return root.val;
 		}
 		
-		return root.val + getMax(getMaxPath(root.left), getMaxPath(root.right));
+		int childsum = getMax(getMaxPath(root.left), getMaxPath(root.right));
+		if(root.val < 0) {
+			if(childsum + root.val > 0) {
+				return childsum + root.val;
+			}else {
+				return 0;
+			}
+		}
+		return childsum + root.val;
 	}
 	
 	private int getMaxFrom(int A, int B, int C) {
@@ -58,18 +68,39 @@ public class MaxPathSum {
 		return max;
 	}
 	
-    public int maxPathSum(TreeNode root) {
-    	if(root == null) {
+	private int maxPathSumUtil(TreeNode root) {
+	   	if(root == null) {
     		return 0;
     	}
     	
+    	if(root.val > max) {
+    		max = root.val;
+    	}
+    	
+    	if(root.val >= 0) {
+    		flag = 1;
+    	}
+    	
     	if(root.left == null && root.right == null) {
+    		if(root.val < 0) {
+    			return 0;
+    		}
     		return root.val;
     	}
     	
     	int sum = root.val + getMaxPath(root.left) + getMaxPath(root.right);
-    	int leftsum = maxPathSum(root.left);
-    	int rightsum = maxPathSum(root.right);
+    	int leftsum = maxPathSumUtil(root.left);
+    	int rightsum = maxPathSumUtil(root.right);
     	return getMaxFrom(sum, leftsum, rightsum);
+	}
+	
+    public int maxPathSum(TreeNode root) {
+    	int res = maxPathSumUtil(root);
+    	
+    	if(flag == 0) {
+    		return max;
+    	}
+    	
+    	return res;
     }
 }
