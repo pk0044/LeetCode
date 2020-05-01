@@ -26,6 +26,7 @@ public class Application {
 		
 		BST obj = new BST();
 		obj.createTree();
+		obj.printRightView(obj.root);
 		
 		
 	}

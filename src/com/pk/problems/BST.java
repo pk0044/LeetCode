@@ -51,9 +51,13 @@ public class BST {
 		root.right.right = new Node(300);
 		root.left.right.right = new Node(-155);
 		root.left.right.right.left = new Node(-150);
-		printLeftView(root);
+		//printLeftView(root);
 	}
 	
+	/**
+	 * function for left view
+	 * @param root
+	 */
 	public void printLeftView(Node root) {
 		if(root == null) {
 			return;
@@ -93,6 +97,47 @@ public class BST {
 			if(queue.isEmpty()) {
 				break;
 			}
+		}
+	}
+	
+	/**
+	 * function for right view of binary tree
+	 * output : 100 200 300 -155 -150
+	 * @param root
+	 */
+	public void printRightView(Node root) {
+		if(root == null) {
+			return;
+		}
+		
+		Queue<Node> queue = new LinkedList<Node>();
+		
+		queue.add(root);
+		queue.add(null);
+		Node curr = null;
+		Node prev = null;
+		
+		while(!queue.isEmpty()) {
+			
+			curr = queue.poll();
+			
+			if(prev == null && curr != null) {
+				System.out.println(curr.val);
+			}
+			
+			if(curr != null && curr.right != null) {
+				queue.add(curr.right);
+			}
+			
+			if(curr != null && curr.left != null) {
+				queue.add(curr.left);
+			}
+			
+			if(!queue.isEmpty() && curr != null && queue.peek() == null) {
+				queue.add(null);
+			}
+			
+			prev = curr;
 		}
 	}
 }
