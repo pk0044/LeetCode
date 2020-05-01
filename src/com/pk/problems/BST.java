@@ -1,6 +1,8 @@
 package com.pk.problems;
 
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Queue;
 
 
@@ -138,6 +140,76 @@ public class BST {
 			}
 			
 			prev = curr;
+		}
+	}
+	
+	
+	/**
+	 *  function to print the bottom view of a binary tree
+	 */
+	
+	int minHd = Integer.MAX_VALUE;
+	int maxHd = Integer.MIN_VALUE;
+	
+	public class Pair{
+		Node node;
+		int height;
+		
+		public Pair(Node node, int height) {
+			this.node = node;
+			this.height = height;
+		}
+	}
+	
+	private void printBottomViewUtil(Node root, int hd, int height, Map<Integer, Pair> map) {
+		if(root == null) {
+			return;
+		}
+		
+		if(hd < minHd) {
+			minHd = hd;
+		}
+		
+		if(hd > maxHd) {
+			maxHd = hd;
+		}
+		
+		if(map.containsKey(hd)) {
+			if(height >= map.get(hd).height) {
+				Pair tmp = new Pair(root, height);
+				map.put(hd, tmp);
+			}
+		}else {
+			Pair tmp = new Pair(root, height);
+			map.put(hd, tmp);
+		}
+		
+		if(root.left != null) {
+			printBottomViewUtil(root.left, hd-1, height+1, map);
+		}
+		
+		if(root.right != null) {
+			printBottomViewUtil(root.right, hd+1, height+1, map);
+		}
+	}
+	
+	public void printBottomView(Node root) {
+		if(root == null) {
+			return;
+		}
+		
+		Map<Integer, Pair> map = new HashMap<Integer, Pair>();
+		int hd = 0;
+		int height = 0;
+		
+		printBottomViewUtil(root, hd, height, map);
+		
+//		for(Map.Entry<Integer, Pair> entry : map.entrySet()) {
+//			System.out.println(entry.getValue().node.val);
+//		}
+		
+		for(int i=minHd; i<=maxHd; i++) {
+			System.out.println(map.get(i).node.val);
 		}
 	}
 }

@@ -26,8 +26,9 @@ public class Application {
 		
 		BST obj = new BST();
 		obj.createTree();
-		obj.printRightView(obj.root);
-		
+//		obj.printRightView(obj.root);
+	//	System.out.println(System.getProperty("java.runtime.version"));
+		obj.printBottomView(obj.root);
 		
 	}
 
