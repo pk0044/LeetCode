@@ -84,6 +84,7 @@ public class MaxPathSum {
     	if(root.left == null && root.right == null) {
     		if(root.val < 0) {
     			return 0;
+    			
     		}
     		return root.val;
     	}
