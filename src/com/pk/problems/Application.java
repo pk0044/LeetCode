@@ -24,11 +24,14 @@ public class Application {
 //		char[][] a = {{'1','0','1','0'},{'1','0','1','1'},{'1','0','1','1'},{'1','1','1','1'}};
 //		System.out.println(obj.maximalSquare(a));
 		
-		BST obj = new BST();
-		obj.createTree();
-//		obj.printRightView(obj.root);
-	//	System.out.println(System.getProperty("java.runtime.version"));
-		obj.printBottomView(obj.root);
+//		BST obj = new BST();
+//		obj.createTree();
+////		obj.printRightView(obj.root);
+//	//	System.out.println(System.getProperty("java.runtime.version"));
+//		obj.printBottomView(obj.root);
+		
+//		VersionControl obj = new VersionControl();
+		
 		
 	}
 
