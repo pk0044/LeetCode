@@ -7,6 +7,7 @@ package com.pk.amazon;
  *
  */
 public class MergerIntervals {
+
 	int a[][];
 	
 	private void swap(int A, int B) {
@@ -22,7 +23,7 @@ public class MergerIntervals {
 	
 	private void quickSort(int start, int end) {
 		if(start < end) {
-			int index = -1;
+			int index = start-1;
 			int pivot = end;
 			
 			for(int i=start; i<end; i++) {
@@ -41,14 +42,37 @@ public class MergerIntervals {
 	}
 	
     public int[][] merge(int[][] intervals) {
+        int[][] res;
+    	if(intervals.length == 0) {
+    		return new int[0][0];
+    	}
         a = intervals;
         quickSort(0, intervals.length-1);
-        int[][] res = new int[20][2];
+        res = new int[intervals.length][2];
+        res[0][0] = intervals[0][0];
+        res[0][1] = intervals[0][1];
+        int count = 0;
         
-        for(int i=1; i<a.length; i++) {
-        	if(a[i][0] <= a[i-1][1]) {
-        		
+        for(int i=1; i<intervals.length; i++) {
+        	if(intervals[i][0] <= res[count][1]) {
+        		if(intervals[i][1] > res[count][1]) {
+        			res[count][1] = intervals[i][1];
+        		}
+        	}else {
+        		count++;
+        		res[count][0] = intervals[i][0];
+        		res[count][1] = intervals[i][1];
         	}
         }
+        
+        int[][] finalres = new int[count+1][2];
+        
+        for(int i=0; i<=count; i++) {
+        	finalres[i][0] = res[i][0];
+        	finalres[i][1] = res[i][1];
+        }
+        
+        return finalres;
     }
+
 }
