@@ -1,6 +1,8 @@
 import com.pk.algorithms.QuickSort;
 import com.pk.amazon.MergerIntervals;
+import com.pk.amazon.MostCommonWord;
 import com.pk.amazon.SpiralMatrix_1;
+import com.pk.amazon.TopKFreqElements;
 
 public class App {
 
@@ -14,9 +16,24 @@ public class App {
 //		int[][] a = {{4,5},{1,4},{0,1}};
 //		System.out.println(obj.merge(a));
 		
-		SpiralMatrix_1 obj = new SpiralMatrix_1();
-		int[][] a = {{1,2,3,4},{5,6,7,8},{9,10,11,12}};
-		obj.spiralOrder(a);
+//		SpiralMatrix_1 obj = new SpiralMatrix_1();
+//		int[][] a = {{1,2,3,4},{5,6,7,8},{9,10,11,12}};
+//		obj.spiralOrder(a);p
+		
+//		String name = "purushottam";
+//		name = name + 'c';
+//		System.out.println(name);
+		
+//		MostCommonWord obj = new MostCommonWord();
+//		String[] banned = {"bob", "hit"};
+//		System.out.println(obj.mostCommonWord("Bob. hIt, baLl", banned));
+		
+		TopKFreqElements obj = new TopKFreqElements();
+		int[] a = {4,1,-1,2,-1,2,3};
+		int[] res = obj.topKFrequent(a, 2);
+		for(int i=0; i<res.length; i++) {
+			System.out.println(res[i]);
+		}
 	}
 
 }
