@@ -1,6 +1,7 @@
 import com.pk.algorithms.QuickSort;
 import com.pk.amazon.MergerIntervals;
 import com.pk.amazon.MostCommonWord;
+import com.pk.amazon.Search2DMatrix2;
 import com.pk.amazon.SpiralMatrix_1;
 import com.pk.amazon.TopKFreqElements;
 
@@ -28,12 +29,16 @@ public class App {
 //		String[] banned = {"bob", "hit"};
 //		System.out.println(obj.mostCommonWord("Bob. hIt, baLl", banned));
 		
-		TopKFreqElements obj = new TopKFreqElements();
-		int[] a = {4,1,-1,2,-1,2,3};
-		int[] res = obj.topKFrequent(a, 2);
-		for(int i=0; i<res.length; i++) {
-			System.out.println(res[i]);
-		}
+//		TopKFreqElements obj = new TopKFreqElements();
+//		int[] a = {4,1,-1,2,-1,2,3};
+//		int[] res = obj.topKFrequent(a, 2);
+//		for(int i=0; i<res.length; i++) {
+//			System.out.println(res[i]);
+//		}
+		
+		Search2DMatrix2 obj = new Search2DMatrix2();
+		int[][] a = {{1,4,7,11,15},{2,5,8,12,19},{3,6,9,16,22},{10,13,14,17,24},{18,21,23,26,30}};
+		System.out.println(obj.searchMatrix(a, 5));
 	}
 
 }
