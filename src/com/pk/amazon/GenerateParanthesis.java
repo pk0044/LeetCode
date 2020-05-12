@@ -17,24 +17,11 @@ public class GenerateParanthesis {
 			}
 			res.add(str);
 		}else {
-	        if(open > 0){
-	            str = str + "(";
-	            open--;
-	    		generateParenthesisUtil(open, close, res, str);
-	        }
-	        
-			if(open < close) {
-	            str = str + ")";
-	            close--;
-	            if(close == 0) {
-	            	res.add(str);
-	            }else {
-	            	generateParenthesisUtil(open, close, res, str);
-	            }
+			generateParenthesisUtil(open-1, close, res, str + "(");
+			if(close > open) {
+				generateParenthesisUtil(open, close-1, res, str + ")");
 			}
 		}
-		
-
 	}
     public List<String> generateParenthesis(int n) {
     	List<String> res = new ArrayList<String>();
