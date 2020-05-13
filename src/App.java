@@ -1,4 +1,5 @@
 import com.pk.algorithms.QuickSort;
+import com.pk.amazon.LargestRecHistorgram;
 import com.pk.amazon.LongestPalSub;
 import com.pk.amazon.MergerIntervals;
 import com.pk.amazon.MostCommonWord;
@@ -41,8 +42,12 @@ public class App {
 //		int[][] a = {{1,4,7,11,15},{2,5,8,12,19},{3,6,9,16,22},{10,13,14,17,24},{18,21,23,26,30}};
 //		System.out.println(obj.searchMatrix(a, 5));
 		
-		LongestPalSub obj = new LongestPalSub();
-		System.out.println(obj.longestPalindrome("aaabaaaa"));
+//		LongestPalSub obj = new LongestPalSub();
+//		System.out.println(obj.longestPalindrome("aaabaaaa"));
+		
+		LargestRecHistorgram obj = new LargestRecHistorgram();
+		int[] a = {2,1,5,6,2,3};
+		System.out.println(obj.largestRectangleArea(a));
 	}
 
 }
