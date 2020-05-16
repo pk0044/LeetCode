@@ -28,6 +28,7 @@ public class App {
 //		name = name + 'c';
 //		System.out.println(name);
 		
+		
 //		MostCommonWord obj = new MostCommonWord();
 //		String[] banned = {"bob", "hit"};
 //		System.out.println(obj.mostCommonWord("Bob. hIt, baLl", banned));
@@ -51,7 +52,7 @@ public class App {
 //		System.out.println(obj.largestRectangleArea(a));
 		
 		JumpGame2 obj = new JumpGame2();
-		int[] a = {1,1,2,1,1};
+		int[] a = {1,1,1,1,1};
 		System.out.println(obj.jump(a));
 	}
 
