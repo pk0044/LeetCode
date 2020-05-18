@@ -1,10 +1,14 @@
 import com.pk.algorithms.QuickSort;
+import com.pk.amazon.CopyListWithRandomPtr;
 import com.pk.amazon.JumpGame2;
 import com.pk.amazon.LargestRecHistorgram;
 import com.pk.amazon.LongestPalSub;
 import com.pk.amazon.MergerIntervals;
 import com.pk.amazon.MostCommonWord;
+import com.pk.amazon.RemoveNthNode;
+import com.pk.amazon.RemoveNthNode.ListNode;
 import com.pk.amazon.Search2DMatrix2;
+import com.pk.amazon.SortColors;
 import com.pk.amazon.SpiralMatrix_1;
 import com.pk.amazon.TopKFreqElements;
 
@@ -51,9 +55,21 @@ public class App {
 //		int[] a = {2,1,5,6,2,3};
 //		System.out.println(obj.largestRectangleArea(a));
 		
-		JumpGame2 obj = new JumpGame2();
-		int[] a = {1,1,1,1,1};
-		System.out.println(obj.jump(a));
+//		JumpGame2 obj = new JumpGame2();
+//		int[] a = {1,1,1,1,1};
+//		System.out.println(obj.jump(a));
+		
+//		SortColors obj = new SortColors();
+//		int[] a = {1,2,0};
+//		obj.sortColors(a);
+		
+		CopyListWithRandomPtr obj = new CopyListWithRandomPtr();
+		obj.createList();
+		obj.display();
+		System.out.println("########################################");
+		obj.copyRandomList(obj.head);
+		
+		
 	}
 
 }
