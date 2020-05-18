@@ -65,15 +65,25 @@ public class CopyListWithRandomPtr {
 			}else {
 				tmp2.random = null;
 			}
+			
+			tmp1 = tmp2.next;
+			if(tmp2.next != null) {
+				tmp2 = tmp2.next.next;
+			}else {
+				tmp2 = null;
+			}
+		}
+		
+		tmp1 = head;
+		tmp2 = head2;
+		
+		while(tmp1 != null && tmp2 != null) {
 			tmp1.next = tmp2.next;
 			if(tmp2.next != null) {
 				tmp2.next = tmp2.next.next;
-			}else {
-				tmp2.next = null;
 			}
-			
 			tmp1 = tmp1.next;
-			tmp2 = tmp2.next;
+			tmp2 =tmp2.next;
 		}
 		
 		return head2;
