@@ -5,6 +5,7 @@ import com.pk.amazon.LargestRecHistorgram;
 import com.pk.amazon.LongestPalSub;
 import com.pk.amazon.MergerIntervals;
 import com.pk.amazon.MostCommonWord;
+import com.pk.amazon.NextPermute;
 import com.pk.amazon.RemoveNthNode;
 import com.pk.amazon.RemoveNthNode.ListNode;
 import com.pk.amazon.Search2DMatrix2;
@@ -63,11 +64,15 @@ public class App {
 //		int[] a = {1,2,0};
 //		obj.sortColors(a);
 		
-		CopyListWithRandomPtr obj = new CopyListWithRandomPtr();
-		obj.createList();
-		obj.display();
-		System.out.println("########################################");
-		obj.copyRandomList(obj.head);
+//		CopyListWithRandomPtr obj = new CopyListWithRandomPtr();
+//		obj.createList();
+//		obj.display();
+//		System.out.println("########################################");
+//		obj.copyRandomList(obj.head);
+		
+		NextPermute obj = new NextPermute();
+		int[] a = {3, 2, 1};
+		obj.nextPermutation(a);
 		
 		
 	}

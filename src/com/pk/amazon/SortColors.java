@@ -10,36 +10,29 @@ package com.pk.amazon;
 public class SortColors {
 	
     public void sortColors(int[] nums) {
-    	if(nums.length == 0) {
+    	if(nums.length == 0 || nums.length == 1) {
     		return;
     	}
     	
-    	int red = -1;
-    	int blue = nums.length;
-    	
+    	int start = 0;
+    	int end = nums.length - 1;
     	int index = 0;
     	
-    	while(index < blue) {
+    	while(index <= end && start < end) {
     		if(nums[index] == 0) {
-    			if(red == index - 1) {
-    				red++;
-    			}else {
-    				red++;
-    				int temp = nums[red];
-    				nums[red] = nums[index];
-    				nums[index] = temp;
-    			}
+    			nums[index] = nums[start];
+    			nums[start] = 0;
+    			start++;
+    			index++;
     		}else if(nums[index] == 2) {
-    			if(index + 1 == blue) {
-    				blue--;
-    			}else {
-    				blue--;
-    				if(nums[blue] == 0) {
-    					s
-    				}
-    			}
+    			nums[index] = nums[end];
+    			nums[end] = 2;
+    			end--;
+    			index++;
+    		}else {
+    			index++;
     		}
-    		index++;
     	}
     }
+
 }
