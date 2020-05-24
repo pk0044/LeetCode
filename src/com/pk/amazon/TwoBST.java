@@ -2,6 +2,7 @@ package com.pk.amazon;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * problem link : https://leetcode.com/problems/all-elements-in-two-binary-search-trees/
@@ -23,53 +24,37 @@ public class TwoBST {
 	    }
 	}
 	
-	private void inOrderTwoBST(TreeNode R1, TreeNode R2, List<Integer> res) {
-		 if(R1 != null && R2 != null) {
-			 if(R1.val < R2.val) {
-				 inOrderTwoBST(R1, R2.left, res);
-			 }else {
-				 inOrderTwoBST(R1.left, R2, res);
-			 }
-			 
-			 if(R1.val < R2.val) {
-				 res.add(R1.val);
-				 inOrderTwoBST(R1, R2.right, res);
-			 }else {
-				 res.add(R2.val);
-				 inOrderTwoBST(R1.right, R2, res);
-			 }
-			 
-		 }else if(R1 != null) {
-			 inOrderTwoBST(R1.left, R2, res);
-		 }else if(R2 != null) {
-			 inOrderTwoBST(R1, R2.left, res);
-		 }
-		 
-		 if(R1 != null && R2 != null) {
-
-		 }else if(R1 != null) {
-			 res.add(R1.val);
-		 }else if(R2 != null) {
-			 res.add(R2.val);
-		 }
-		 
-		 if(R1 != null && R2 != null) {
-			 if(R1.val > R2.val) {
-				 inOrderTwoBST(R1.right, R2, res);
-			 }else {
-				 inOrderTwoBST(R1, R2.right, res);
-			 }
-		 }else if(R1 != null) {
-			 inOrderTwoBST(R1.right, R2, res);
-		 }else if(R2 != null) {
-			 inOrderTwoBST(R1, R2.right, res);
-		 }
+	private void reverseOrder(TreeNode root, Stack<Integer> stack) {
+		if(root != null) {
+			reverseOrder(root.right, stack);
+			stack.add(root.val);
+			reverseOrder(root.left, stack);
+		}
+	}
+	
+	private void inorder(TreeNode root, Stack<Integer> stack, List<Integer> res) {
+		if(root != null) {
+			inorder(root.left, stack, res);
+			while(!stack.empty() && stack.peek() <= root.val) {
+				res.add(stack.pop());
+			}
+			res.add(root.val);
+			inorder(root.right, stack, res);
+		}
 	}
 	
     public List<Integer> getAllElements(TreeNode root1, TreeNode root2) {
         List<Integer> res = new ArrayList<Integer>();
         
-        inOrderTwoBST(root1, root2, res);
+        Stack<Integer> stack = new Stack<Integer>();
+        
+        reverseOrder(root1, stack);
+        
+        inorder(root2, stack, res);
+        
+        while(!stack.isEmpty()) {
+        	res.add(stack.pop());
+        }
         
         return res;
     }

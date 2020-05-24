@@ -1,6 +1,8 @@
+import java.util.ArrayList;
+import java.util.List;
+
 import com.pk.algorithms.QuickSort;
 import com.pk.amazon.CopyListWithRandomPtr;
-import com.pk.amazon.JumpGame2;
 import com.pk.amazon.LargestRecHistorgram;
 import com.pk.amazon.LongestPalSub;
 import com.pk.amazon.MergerIntervals;
@@ -12,6 +14,13 @@ import com.pk.amazon.Search2DMatrix2;
 import com.pk.amazon.SortColors;
 import com.pk.amazon.SpiralMatrix_1;
 import com.pk.amazon.TopKFreqElements;
+import com.pk.arrays.MaxChunkSort;
+import com.pk.dp.CoinProblem;
+import com.pk.dp.JumpGame2;
+import com.pk.dp.LCS;
+import com.pk.dp.LongestPalSubSeq;
+import com.pk.dp.MinCostBruteForce;
+import com.pk.stack.PostFix;
 
 public class App {
 
@@ -70,11 +79,46 @@ public class App {
 //		System.out.println("########################################");
 //		obj.copyRandomList(obj.head);
 		
-		NextPermute obj = new NextPermute();
-		int[] a = {3, 2, 1};
-		obj.nextPermutation(a);
+//		NextPermute obj = new NextPermute();
+//		int[] a = {3, 2, 1};
+//		obj.nextPermutation(a);
+//		
 		
+//		MinCostBruteForce obj = new MinCostBruteForce();
+//		int[][] a = {{1, 2, 1}, {3, 4, 2}, {1, 0, 1}};
+//		System.out.println(obj.findMinCost(a));
+//		
 		
+//		CoinProblem obj = new CoinProblem();
+//		System.out.println(obj.findTotalWays(6));
+//		System.out.println(obj.findTotalWaysUtilDP(6));
+		
+//		Test obj = new Test();
+//		obj.tester();
+		
+//		LCS obj = new LCS();
+//		System.out.println(obj.LCSBruteForce("abcde", "ace"));
+		
+//		LongestPalSubSeq obj = new LongestPalSubSeq();
+//		System.out.println(obj.longestPalindromeSubseq("awaearatayau"));
+		
+//		JumpGame2 obj = new JumpGame2();
+//		int[] a = {2, 3, 1, 1, 4};
+//		System.out.println(obj.jump(a));
+		
+	//	System.out.println("/".charAt(0) - '0');
+//		System.out.println(10^3);
+////		System.out.println("4".charAt(0) - '0');
+//		System.out.println(10^0 * ("4".charAt(0) - '0'));
+		
+		ArrayList<String> A = new ArrayList<String>();
+
+
+		A.add("-1");
+	
+		PostFix obj = new PostFix();
+		
+		System.out.println(obj.evalRPN(A));
 	}
 
 }
