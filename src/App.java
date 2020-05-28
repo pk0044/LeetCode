@@ -19,6 +19,7 @@ import com.pk.dp.CoinProblem;
 import com.pk.dp.JumpGame2;
 import com.pk.dp.LCS;
 import com.pk.dp.LongestPalSubSeq;
+import com.pk.dp.MinCoin;
 import com.pk.dp.MinCostBruteForce;
 import com.pk.stack.PostFix;
 
@@ -111,14 +112,19 @@ public class App {
 ////		System.out.println("4".charAt(0) - '0');
 //		System.out.println(10^0 * ("4".charAt(0) - '0'));
 		
-		ArrayList<String> A = new ArrayList<String>();
-
-
-		A.add("-1");
-	
-		PostFix obj = new PostFix();
+//		ArrayList<String> A = new ArrayList<String>();
+//
+//
+//		A.add("-1");
+//	
+//		PostFix obj = new PostFix();
+//		
+//		System.out.println(obj.evalRPN(A));
 		
-		System.out.println(obj.evalRPN(A));
+		int[] a = {2};
+		MinCoin obj = new MinCoin();
+		System.out.println(obj.coinChange(a, 3));
+		
 	}
 
 }
