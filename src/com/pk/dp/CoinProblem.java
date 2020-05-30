@@ -1,6 +1,8 @@
 package com.pk.dp;
 
 /**
+ * 
+ * problem link : https://leetcode.com/problems/coin-change-2/
  * question
  * 
  * Given 3 numbers {1, 3, 5}, we need to tell
@@ -11,63 +13,49 @@ package com.pk.dp;
  *
  */
 public class CoinProblem {
-	
-	private int findTotalWaysUtil(int start, int end) {
-		
-		//System.out.println(start);
-		
+	private int changeBruteForce(int[] coins, int index, int start, int end) {
 		if(start == end) {
 			return 1;
 		}
 		
-		int count1 = 0;
-		int count2 = 0;
-		int count3 = 0;
-		
-		if(start + 1 <= end) {
-			count1 = findTotalWaysUtil(start+1, end);
+		if(start > end) {
+			return 0;
 		}
 		
-		if(start + 3 <= end) {
-			count2 = findTotalWaysUtil(start+3, end);
+		if(index >= coins.length) {
+			return 0;
 		}
 		
-		if(start + 5 <= end) {
-			count3 = findTotalWaysUtil(start+5, end);
-		}
-		
-		return count1 + count2 + count3;
+		return changeBruteForce(coins, index+1, start, end) + changeBruteForce(coins, index, start+coins[index], end);
 	}
 	
-	public int findTotalWaysUtilDP(int N) {
-		if(N <= 1) {
-			return 1;
+	private int changeDP(int amount, int[] coins) {
+		if(amount == 0) {
+			return 0;
 		}
 		
-		int[] a = new int[N+1];
+		if(coins.length == 0) {
+			return 0;
+		}
 		
-		a[0] = 1;
-		a[1] = 1;
+		int[] total = new int[amount+1];
+		total[0] = 1;
 		
-		for(int i=2; i<= N; i++) {
-
-			if(i - 1 >= 0) {
-				a[i] = a[i] + a[i-1];
-			}
-			
-			if(i - 3 >= 0) {
-				a[i] = a[i] + a[i-3];
-			}
-			
-			if(i - 5 >= 0) {
-				a[i] = a[i] + a[i-5];
+		for(int i=1; i <= amount; i++) {
+			total[i] = 0;
+		}
+		
+		for(int i=0; i<coins.length; i++) {
+			for(int j=coins[i]; j <= amount; j++) {
+				total[j] = total[j] + total[j - coins[i]];
 			}
 		}
 		
-		return a[N];
+		return total[amount];
 	}
 	
-	public int findTotalWays(int N) {
-		return findTotalWaysUtil(0, N);
-	}
+    public int change(int amount, int[] coins) {
+      //  return changeBruteForce(coins, 0, 0, amount);
+    	return changeDP(amount, coins);
+    }
 }

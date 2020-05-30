@@ -21,6 +21,7 @@ import com.pk.dp.LCS;
 import com.pk.dp.LongestPalSubSeq;
 import com.pk.dp.MinCoin;
 import com.pk.dp.MinCostBruteForce;
+import com.pk.dp.MinCostClimbingStairs;
 import com.pk.stack.PostFix;
 
 public class App {
@@ -121,9 +122,13 @@ public class App {
 //		
 //		System.out.println(obj.evalRPN(A));
 		
-		int[] a = {2};
-		MinCoin obj = new MinCoin();
-		System.out.println(obj.coinChange(a, 3));
+//		int[] a = {1, 2, 5};
+//		CoinProblem obj = new CoinProblem();
+//		System.out.println(obj.change(5, a));
+		int[] a = {0, 1, 1, 0};
+		MinCostClimbingStairs obj = new MinCostClimbingStairs();
+		System.out.println(obj.minCostClimbingStairsDP(a));
+		
 		
 	}
 
