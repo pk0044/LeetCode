@@ -16,12 +16,16 @@ import com.pk.amazon.SpiralMatrix_1;
 import com.pk.amazon.TopKFreqElements;
 import com.pk.arrays.MaxChunkSort;
 import com.pk.dp.CoinProblem;
+import com.pk.dp.HouseRobber;
 import com.pk.dp.JumpGame2;
+import com.pk.dp.KeyBoard;
 import com.pk.dp.LCS;
 import com.pk.dp.LongestPalSubSeq;
 import com.pk.dp.MinCoin;
 import com.pk.dp.MinCostBruteForce;
 import com.pk.dp.MinCostClimbingStairs;
+import com.pk.dp.MinCostTickets;
+import com.pk.dp.MinFallPathS;
 import com.pk.stack.PostFix;
 
 public class App {
@@ -122,14 +126,26 @@ public class App {
 //		
 //		System.out.println(obj.evalRPN(A));
 		
-//		int[] a = {1, 2, 5};
-//		CoinProblem obj = new CoinProblem();
-//		System.out.println(obj.change(5, a));
-		int[] a = {0, 1, 1, 0};
-		MinCostClimbingStairs obj = new MinCostClimbingStairs();
-		System.out.println(obj.minCostClimbingStairsDP(a));
+////		int[] a = {1, 2, 5};
+////		CoinProblem obj = new CoinProblem();
+////		System.out.println(obj.change(5, a));
+//		int[][] a = {{1,2,3},{4,5,6},{7,8,9}};
+//		MinFallPathS obj = new MinFallPathS();
+//		System.out.println(obj.minFallingPathSum(a));
+//	//	System.out.println(obj.minFallingPathSum(A));
+//		
+//		int[] days = {1,4,6,7,8,20};
+//		int[] costs = {7,2,15};
+//		MinCostTickets obj = new MinCostTickets();
+//		System.out.println(obj.mincostTickets(days, costs));
+//		
+//		KeyBoard obj = new KeyBoard();
+//		System.out.println(obj.minSteps(5));
+//		
 		
-		
+		HouseRobber obj = new HouseRobber();
+		int[] a = {1,2,3,1};
+		System.out.println(obj.rob(a));
 	}
 
 }
