@@ -26,6 +26,7 @@ import com.pk.dp.MinCostBruteForce;
 import com.pk.dp.MinCostClimbingStairs;
 import com.pk.dp.MinCostTickets;
 import com.pk.dp.MinFallPathS;
+import com.pk.dp.PerfectSquare;
 import com.pk.stack.PostFix;
 
 public class App {
@@ -142,10 +143,13 @@ public class App {
 //		KeyBoard obj = new KeyBoard();
 //		System.out.println(obj.minSteps(5));
 //		
+//		
+//		HouseRobber obj = new HouseRobber();
+//		int[] a = {1,2,3,1};
+//		System.out.println(obj.rob(a));
 		
-		HouseRobber obj = new HouseRobber();
-		int[] a = {1,2,3,1};
-		System.out.println(obj.rob(a));
+		PerfectSquare obj = new PerfectSquare();
+		System.out.println(obj.numSquares(12));
 	}
 
 }
