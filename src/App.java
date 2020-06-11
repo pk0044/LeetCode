@@ -16,6 +16,7 @@ import com.pk.amazon.SpiralMatrix_1;
 import com.pk.amazon.TopKFreqElements;
 import com.pk.arrays.MaxChunkSort;
 import com.pk.dp.CoinProblem;
+import com.pk.dp.EditDistance;
 import com.pk.dp.HouseRobber;
 import com.pk.dp.JumpGame2;
 import com.pk.dp.KeyBoard;
@@ -147,9 +148,12 @@ public class App {
 //		HouseRobber obj = new HouseRobber();
 //		int[] a = {1,2,3,1};
 //		System.out.println(obj.rob(a));
+//		
+//		PerfectSquare obj = new PerfectSquare();
+//		System.out.println(obj.numSquares(12));
 		
-		PerfectSquare obj = new PerfectSquare();
-		System.out.println(obj.numSquares(12));
+		EditDistance obj = new EditDistance();
+		System.out.println(obj.minDistance("horse", "ros"));
 	}
 
 }
