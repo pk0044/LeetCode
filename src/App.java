@@ -28,7 +28,9 @@ import com.pk.dp.MinCostBruteForce;
 import com.pk.dp.MinCostClimbingStairs;
 import com.pk.dp.MinCostTickets;
 import com.pk.dp.MinFallPathS;
+import com.pk.dp.OneZero;
 import com.pk.dp.PerfectSquare;
+import com.pk.dp.TargetSum;
 import com.pk.stack.PostFix;
 
 public class App {
@@ -156,8 +158,22 @@ public class App {
 //		EditDistance obj = new EditDistance();
 //		System.out.println(obj.minDistance("horse", "ros"));
 		
-		DiceRolls obj = new DiceRolls();
-		System.out.println(obj.numRollsToTarget(2, 5, 10));
+//		DiceRolls obj = new DiceRolls();
+//		System.out.println(obj.numRollsToTarget(2, 5, 10));
+		
+//		TargetSum obj = new TargetSum();
+//		int[] nums = {1, 1, 1, 1, 1};
+//		int S = 3;
+//		System.out.println(obj.findTargetSumWays(nums, S));
+		
+//		OneZero obj = new OneZero();
+//		String[] strs = {"10","0001","111001","1","0"};
+//		System.out.println(obj.findMaxForm(strs, 5, 3));
+		
+		String str = null;
+		if(str) {
+			System.out.println("hey!!");
+		}
 	}
 
 }
